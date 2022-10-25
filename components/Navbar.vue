@@ -10,7 +10,7 @@
 		</div>
 		<div>
 			<nuxt-link to="/saved">
-				<IconsIconSaved />
+				<IconsIconSaved :color="'#6563ff'" />
 			</nuxt-link>
 		</div>
 	</div>
