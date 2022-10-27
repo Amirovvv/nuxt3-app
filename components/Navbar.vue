@@ -1,5 +1,5 @@
 <template>
-	<div class="flex justify-between py-4">
+	<div class="flex justify-between items-center py-4">
 		<div>
 			<nuxt-link to="/">
 				<span class="flex text-white items-center">
@@ -10,7 +10,7 @@
 		</div>
 		<div>
 			<nuxt-link to="/saved">
-				<IconsIconSaved :color="'#6563ff'" />
+				<IconsIconSaved class="h-12 w-12" :color="'#6563ff'" :stroke="'none'" />
 			</nuxt-link>
 		</div>
 	</div>
