@@ -7,6 +7,26 @@ const data = await useFetch(`https://dummyjson.com/posts/${route.params.id}`, {
 	key: `post-${route.params.id}`,
 })
 const post = ref(data.data.value)
+
+const save = useSave()
+
+function isInSaved(post) {
+	// return save.value.includes(post)
+	return !!save.value.find((se) => se.id === post.id)
+}
+
+function savePost(post) {
+	if (!isInSaved(post)) {
+		save.value.push(post)
+	} else {
+		save.value = save.value.filter((se) => se.id !== post.id)
+	}
+}
+
+onMounted(() => {
+	console.log(save.value)
+	console.log(isInSaved(post))
+})
 </script>
 
 <template>
@@ -32,7 +52,20 @@ const post = ref(data.data.value)
 					>{{ tag }}</span
 				>
 			</div>
-			<IconsIconSaved class="w-8 h-8" :color="'none'" :stroke="'#ffffff'" />
+			<IconsIconSaved
+				v-if="isInSaved(post)"
+				class="w-8 h-8"
+				:color="'#ffffff'"
+				:stroke="'#ffffff'"
+				@click.prevent="savePost(post)"
+			/>
+			<IconsIconSaved
+				v-else
+				class="w-8 h-8"
+				:color="'none'"
+				:stroke="'#ffffff'"
+				@click.prevent="savePost(post)"
+			/>
 		</div>
 		<span class="mt-6 block">
 			{{ post.body }}
