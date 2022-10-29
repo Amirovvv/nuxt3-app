@@ -1,8 +1,6 @@
 <script setup>
 const { data } = await useFetch('https://dummyjson.com/posts?limit=10')
 const posts = data.value.posts
-
-const save = useSave()
 </script>
 
 <template>
