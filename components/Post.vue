@@ -24,7 +24,7 @@ function savePost(post) {
     :key="post.id"
     :to="{ name: 'post-id', params: { id: post.id } }"
     style="min-height: 136px"
-    class="text-white flex justify-between bg-slate-800 rounded-lg shadow-lg p-6"
+    class="text-white flex justify-between bg-slate-800 rounded-lg shadow-lg p-6 hover:-translate-y-1.5"
     ><div class="flex flex-col justify-between">
       <div>
         <p class="text-xl font-semibold text-grat-900">
