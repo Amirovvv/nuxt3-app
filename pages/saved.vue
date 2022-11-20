@@ -1,6 +1,9 @@
 <script setup>
 import { ArrowLeftCircleIcon } from '@heroicons/vue/24/solid'
 
+useHead({
+  title: 'Nuxt 3 - saved',
+})
 const save = useSave()
 </script>
 

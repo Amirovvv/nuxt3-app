@@ -37,6 +37,9 @@ getTags()
 
 <template>
   <div class="mt-10 mx-auto">
+    <Head>
+      <Title>Nuxt 3 - posts</Title>
+    </Head>
     <div>
       <span class="text-white mr-2">Sorting by tags :</span>
       <span

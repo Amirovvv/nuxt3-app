@@ -25,6 +25,9 @@ function savePost(post) {
 
 <template>
   <div class="text-2xl mx-auto mt-6 max-w-prose text-white">
+    <Head>
+      <Title>Nuxt 3 - {{ post.title }}</Title>
+    </Head>
     <NuxtLink
       to="/"
       class="flex items-center font-medium text-indigo-500 hover:text-indigo-400"
